@@ -13,19 +13,15 @@
   On some Linux systems, you must allow this feature:
 
   ```shell
-  $ echo 'net.ipv4.ping_group_range = 0 2147483647' | sudo tee -a /etc/sysctl.conf
+  $ echo 'net.ipv4.ping_group_range = 0 2147483647' | sudo tee /etc/sysctl.d/impclib.conf
   $ sudo sysctl -p
   ```
-
   You can check the current value with the following command:
 
   ```shell
   $ sysctl net.ipv4.ping_group_range
   net.ipv4.ping_group_range = 0 2147483647
   ```
-
-  *Since Ubuntu 20.04 LTS, this manipulation is no longer necessary.*
-
   [Read more about `ping_group_range` on www.kernel.org]
 
 [`ping`]: 2-functions.md#ping
